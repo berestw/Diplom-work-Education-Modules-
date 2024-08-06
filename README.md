@@ -1,1 +1,1 @@
-# Diplom-work-Education-Modules-
+# Django-приложение “Образовательные модули”
