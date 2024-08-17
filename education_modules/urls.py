@@ -1,13 +1,20 @@
 from django.urls import path
-from .views import (EducationModulesAPIView, EducationModulesDetailAPIView, EducationModulesCreateAPIView, EducationModulesUpdateAPIView,
-                    EducationModulesDestroyAPIView)
+from .views import (
+    EducationModulesListAPIView,
+    EducationModulesCreateAPIView,
+    EducationModulesUpdateAPIView,
+    EducationModulesDestroyAPIView,
+    EducationModulesRetrieveAPIView,
+)
 
-app_name = 'education_modules'
+app_name = "education_modules"
 
 urlpatterns = [
-    path('models/', EducationModulesAPIView.as_view(), name='models'),
-    path('models/<int:pk>/', EducationModulesDetailAPIView.as_view(), name='model'),
-    path('models/create/', EducationModulesCreateAPIView.as_view(), name='create'),
-    path('models/delete/<int:pk>/', EducationModulesDestroyAPIView.as_view(), name='delete'),
-    path('models/update/<int:pk>/', EducationModulesUpdateAPIView.as_view(), name='update'),
+    path("", EducationModulesListAPIView.as_view(), name="list"),
+    path("create/", EducationModulesCreateAPIView.as_view(), name="create"),
+    path("delete/<int:pk>/", EducationModulesDestroyAPIView.as_view(), name="delete"),
+    path("update/<int:pk>/", EducationModulesUpdateAPIView.as_view(), name="update"),
+    path(
+        "retrieve/<int:pk>/", EducationModulesRetrieveAPIView.as_view(), name="retrieve"
+    ),
 ]

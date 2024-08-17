@@ -6,4 +6,4 @@ from .models import EducationModules
 class EducationSerializer(serializers.ModelSerializer):
     class Meta:
         model = EducationModules
-        fields = ['number', 'name', 'description']
+        fields = ["number", "name", "description"]
