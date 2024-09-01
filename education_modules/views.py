@@ -22,22 +22,22 @@ class EducationModulesListAPIView(ListAPIView):
 
 class EducationModulesCreateAPIView(CreateAPIView):
     serializer_class = EducationSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [AllowAny]
 
 
 class EducationModulesUpdateAPIView(UpdateAPIView):
     queryset = EducationModules.objects.all()
     serializer_class = EducationSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [AllowAny]
 
 
 class EducationModulesRetrieveAPIView(RetrieveAPIView):
     serializer_class = EducationSerializer
     queryset = EducationModules.objects.all()
-    permission_classes = [IsAuthenticated]
+    permission_classes = [AllowAny]
 
 
 class EducationModulesDestroyAPIView(DestroyAPIView):
     queryset = EducationModules.objects.all()
-    permission_classes = [IsAuthenticated]
+    permission_classes = [AllowAny]
 
